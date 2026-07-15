@@ -1,0 +1,35 @@
+{
+  "name": "Frnd - Intelligent Telegram Bot",
+  "description": "Frnd is an ultra-intelligent bot powered by Google Gemini. Describes images, answers like a top economist & strategist, ownership transfer via bank + one-click Heroku deploy. Only $2.5 USD. 30-min trial included.",
+  "repository": "https://github.com/grazaxyz678-creator/frnd_bot",
+  "keywords": ["telegram", "bot", "gemini"],
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Telegram Bot Token from @BotFather",
+      "required": true
+    },
+    "GEMINI_API_KEY": {
+      "description": "Google Gemini API Key from https://aistudio.google.com/apikey",
+      "required": true
+    },
+    "PRODIA_API_KEY": {
+      "description": "Prodia API Key for image generation (optional)",
+      "required": false
+    },
+    "OWNER_CHAT_ID": {
+      "description": "Your Telegram Chat ID (get from @userinfobot)",
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
